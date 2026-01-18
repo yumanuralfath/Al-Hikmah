@@ -2,7 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    id("com.google.devtools.ksp") version "1.9.20-1.0.14"
+    id("com.google.devtools.ksp") version "2.0.21-1.0.25"
 }
 
 android {
@@ -52,19 +52,16 @@ dependencies {
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.activity.compose.v1122)
-    implementation(libs.android.pdf.viewer)
-    implementation("nl.siegmann.epublib:epublib-core:4.0") {
-        exclude(group = "org.slf4j")
-        exclude(group = "xmlpull")
-    }
+    implementation(libs.androidx.compose.material.icons.extended)
+    implementation("com.github.mhiew:android-pdf-viewer:3.2.0-beta.3")
+    implementation(libs.accompanist.permissions)
 
-    val roomVersion = "2.6.1"
-    implementation("androidx.room:room-runtime:$roomVersion")
-    implementation("androidx.room:room-ktx:$roomVersion")
-    ksp("androidx.room:room-compiler:$roomVersion")
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.room.ktx)
+    ksp(libs.androidx.room.compiler)
 
-    // Coil untuk load cover images
-    implementation("io.coil-kt:coil-compose:2.5.0")
+    // Coil for load cover image
+    implementation(libs.coil.compose)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

@@ -30,7 +30,6 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.alhikmah.data.AppDatabase
 import com.example.alhikmah.data.Book
@@ -40,10 +39,9 @@ import com.example.alhikmah.utils.getFileName
 import com.example.alhikmah.utils.saveFileToInternalStorage
 import kotlinx.coroutines.launch
 
-@Preview
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HomeScreen(){
+fun HomeScreen(onOpenReader: (Book) -> Unit){
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
 
@@ -139,8 +137,7 @@ fun HomeScreen(){
                     items(books) { book ->
                         BookCard (
                             book = book,
-                            onClick = { /* Navigate ke reader */ },
-                            onLongClick = { /* Show options */ }
+                            onOpenReader
                         )
                     }
                 }
