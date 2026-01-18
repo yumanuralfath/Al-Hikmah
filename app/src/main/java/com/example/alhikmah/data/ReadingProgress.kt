@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 data class ReadingProgress(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
-    val bookId: String,
+    val bookId: Int,
     val timestamp: Long = System.currentTimeMillis(),
     val pageNumber: Int,
     val percentage: Float,
