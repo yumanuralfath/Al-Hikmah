@@ -9,7 +9,7 @@ interface BookDao {
     fun getAllBooks(): Flow<List<Book>>
 
     @Query("SELECT * FROM books WHERE id = :bookId")
-    fun getBookById(bookId: String): Flow<Book?>
+    fun getBookById(bookId: Int): Flow<Book?>
 
     @Query("SELECT * FROM books WHERE isFavorite = 1 ORDER BY lastReadTime DESC")
     fun getFavoriteBooks(): Flow<List<Book>>
