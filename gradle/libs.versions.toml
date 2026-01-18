@@ -1,5 +1,7 @@
 [versions]
+activityComposeVersion = "1.12.2"
 agp = "8.13.2"
+androidPdfViewer = "3.2.0-beta.1"
 kotlin = "2.0.21"
 coreKtx = "1.17.0"
 junit = "4.13.2"
@@ -10,6 +12,8 @@ activityCompose = "1.8.0"
 composeBom = "2024.09.00"
 
 [libraries]
+android-pdf-viewer = { module = "com.github.barteksc:android-pdf-viewer", version.ref = "androidPdfViewer" }
+androidx-activity-compose-v1122 = { module = "androidx.activity:activity-compose", version.ref = "activityComposeVersion" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
