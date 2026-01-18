@@ -12,7 +12,7 @@ interface BookDao {
     fun getBookById(bookId: String): Flow<Book?>
 
     @Query("SELECT * FROM books WHERE isFavorite = 1 ORDER BY lastReadTime DESC")
-    fun getUnsyncedBooks(): Flow<List<Book>>
+    fun getFavoriteBooks(): Flow<List<Book>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertBook(book: Book): Long
